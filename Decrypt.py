@@ -14,18 +14,19 @@ direc = os.listdir(folder)
 
 os.chdir(folder)
 
-for file in direc:
-    if file == "Encrypt.py":
-        direc.remove("Encrypt.py")
-    if file == "README.md":
-        direc.remove("README.md")     
-    if file == "Decrypt.py":
-        direc.remove("Decrypt.py")  
-    if file == "cryptkey.key":
-        direc.remove("cryptkey.key")     
-    if file == "gitignore":
-        direc.remove("gitignore") 
-
+'''
+    for file in direc:
+        if file == "Encrypt.py":
+            direc.remove("Encrypt.py")
+        if file == "README.md":
+            direc.remove("README.md")     
+        if file == "Decrypt.py":
+            direc.remove("Decrypt.py")  
+        if file == "cryptkey.key":
+            direc.remove("cryptkey.key")     
+        if file == "gitignore":
+            direc.remove("gitignore") 
+'''
 
 
 

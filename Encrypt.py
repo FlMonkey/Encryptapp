@@ -12,7 +12,7 @@ myfile.close()
 direc = os.listdir(folder)
 
 
-
+key = Fernet.generate_key()
     
 
 os.chdir(folder)
@@ -33,17 +33,14 @@ for file in direc:
     if file == "cryptkey.key":
         input("it seems that you already have a key would you like to use it? (y/n)")
         if input == "y":
-            with open("cryptkey.key", "rb") as fp:
-                key = fp.read()
-            direc.remove("cryptkey.key")
+            with open("cryptkey.key", "wb") as cryptkey:
+                cryptkey.write(key)                
             continue
         if input == "n":
             delete = input("would you like to delete the key and create a new one? (y/n)")
             if delete == "y":
-                key = Fernet.generate_key()
                 with open("cryptkey.key", "wb") as cryptkey:
                     cryptkey.write(key)                
-                direc.remove("cryptkey.key")
                 continue
             if delete == "n":
                 exit()
@@ -51,15 +48,13 @@ for file in direc:
         listcheck += 1
         if listcheck == listlen:
             print("it apears you have do not have a key, ome will be generated for you")
-            key = Fernet.generate_key()
             with open("cryptkey.key", "wb") as cryptkey:
                 cryptkey.write(key)
-            direc.remove("cryptkey.key")
             continue
 
 
 
-
+direc.remove("cryptkey.key")
     
     
 for file in direc:
