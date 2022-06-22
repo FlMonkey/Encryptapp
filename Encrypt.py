@@ -46,11 +46,14 @@ for file in direc:
                 exit()
     if file != "cryptkey.key":
         listcheck += 1
+        print("listcheck =", listcheck)
+        print("listlen", listlen)
         if listcheck == listlen:
             print("it apears you have do not have a key, ome will be generated for you")
             with open("cryptkey.key", "wb") as cryptkey:
                 cryptkey.write(key)
             continue
+
 
 
 
